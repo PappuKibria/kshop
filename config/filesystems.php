@@ -56,6 +56,15 @@ return [
             'throw' => false,
         ],
 
+        'admin' => [
+            'driver' => 'local',
+            'root' => public_path('uploads'),
+            'url' => public_path('uploads'),
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+
     ],
 
     /*
