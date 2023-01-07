@@ -4,6 +4,7 @@ use Illuminate\Routing\Router;
 //use App\Admin\Controllers\ProductController;
 //use App\Admin\Controllers\ProductCategoryController;
 //use App\Admin\Controllers\ProductSubCategoryController;
+use App\Http\Controllers\CommonController;
 
 Admin::routes();
 
@@ -21,3 +22,4 @@ Route::group([
     $router->resource('/products-sub-categories', ProductSubCategoryController::class);
 
 });
+Route::get('/home', [CommonController::class,'home'])->name('main');

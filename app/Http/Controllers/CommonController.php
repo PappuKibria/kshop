@@ -9,6 +9,7 @@ use App\Models\Leadconfig;
 use App\Models\LeadOrganization;
 use App\Models\Location;
 use App\Models\Organization;
+use App\Models\Product;
 use App\Models\ProductForm;
 use App\Models\ProductSubCategory;
 use App\Models\Profession;
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Encore\Admin\Auth\Database\Administrator;
 use Illuminate\Support\Facades\Validator;
+use Inertia\Inertia;
 
 class CommonController extends Controller
 {
@@ -41,5 +43,9 @@ class CommonController extends Controller
         return $data;
     }
 
-
+    public function home(){
+        $products = Product::select(['id','name','price','photo','special_price'])->where('status',1)->get();
+//        dd($products);
+        return Inertia::render('HomeComponent', compact('products'));
+    }
 }

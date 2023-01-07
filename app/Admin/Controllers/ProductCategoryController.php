@@ -24,8 +24,8 @@ class ProductCategoryController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header(trans('admin.index'))
-            ->description(trans('admin.description'))
+            ->header(trans('Product Category'))
+            ->description(trans('Details'))
             ->body($this->grid());
     }
 
